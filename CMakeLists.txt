@@ -23,7 +23,7 @@ endif()
 
 include_directories(include src src/codecs)
 
-add_library(SDL2_mixer SHARED)
+add_library(SDL2_mixer)
 
 target_sources(SDL2_mixer PRIVATE
         src/effect_position.c src/effects_internal.c src/effect_stereoreverse.c
