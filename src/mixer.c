@@ -19,9 +19,9 @@
   3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "SDL.h"
+#include "SDL2/SDL.h"
 
-#include "SDL_mixer.h"
+#include "SDL2/SDL_mixer.h"
 #include "mixer.h"
 #include "music.h"
 #include "load_aiff.h"

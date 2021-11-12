@@ -18,11 +18,11 @@
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 */
-#include "SDL_hints.h"
-#include "SDL_log.h"
-#include "SDL_timer.h"
+#include "SDL2/SDL_hints.h"
+#include "SDL2/SDL_log.h"
+#include "SDL2/SDL_timer.h"
 
-#include "SDL_mixer.h"
+#include "SDL2/SDL_mixer.h"
 #include "mixer.h"
 #include "music.h"
 
