@@ -29,7 +29,9 @@ jobs:
           fetch-depth: 0
 
       - name: dependencies
-        run: sudo apt install ninja-build libsdl2-dev
+        run: |
+          sudo apt -y update
+          sudo apt -y install ninja-build libsdl2-dev
 
       - name: Configure CMake
         env:
