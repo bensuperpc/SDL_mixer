@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-cmake:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -42,3 +42,30 @@ jobs:
 
       - name: Build CMake
         run: ninja -C build
+  build-make:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: ["gcc", "clang"]
+
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v2
+        with:
+          submodules: "recursive"
+          fetch-depth: 0
+
+      - name: dependencies
+        run: |
+          sudo apt -y update
+          sudo apt -y install ninja-build libsdl2-dev
+
+      - name: Configure make
+        env:
+          CC: ${{matrix.compiler}}
+        run: |
+          ./configure
+
+      - name: Build make
+        run: make -j
