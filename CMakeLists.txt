@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.0.0)
 project(SDL_mixer C)
 
 # FIXME: make it able build against system codec libraries, too.
@@ -13,6 +13,13 @@ option(SUPPORT_OGG "Support loading OGG Vorbis music via Tremor" OFF)
 option(SUPPORT_MP3_MPG123 "Support loading MP3 music via MPG123" OFF)
 option(SUPPORT_MOD_MODPLUG "Support loading MOD music via modplug" OFF)
 option(SUPPORT_MID_TIMIDITY "Support TiMidity" OFF)
+option(FIND_LOCAL_SDL2 "Use find_package in CMake to find SDL2 lib" ON)
+
+
+if (SUPPORT_FLAC)
+    find_package(SDL2 REQUIRED)
+    include_directories(${SDL2_INCLUDE_DIR})
+endif()
 
 include_directories(include src src/codecs)
 
