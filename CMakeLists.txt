@@ -71,5 +71,5 @@ if (SUPPORT_MID_TIMIDITY)
 endif()
 
 target_include_directories(SDL2_mixer PUBLIC include)
-target_link_libraries(SDL2_mixer PRIVATE SDL2::SDL2)
+target_link_libraries(SDL2_mixer PRIVATE SDL2)
 
