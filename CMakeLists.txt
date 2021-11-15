@@ -26,8 +26,9 @@ endif()
 
 if (NOT ANDROID AND NOT (TARGET SDL2 OR TARGET SDL2-static))
 	find_package(SDL2 REQUIRED)
-    include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_INCLUDE_DIR})
 endif()
+
+include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_INCLUDE_DIR})
 
 include_directories(include src src/codecs)
 
