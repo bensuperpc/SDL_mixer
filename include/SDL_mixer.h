@@ -27,7 +27,7 @@
 #include "SDL2/SDL_audio.h"
 #include "SDL2/SDL_endian.h"
 #include "SDL2/SDL_version.h"
-#include "begin_code.h"
+#include "SDL2/begin_code.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
