@@ -26,11 +26,10 @@ option(SUPPORT_MID_TIMIDITY "Support loading MIDI music via TiMidity" ON)
 option(BUILD_SHARED_LIBS "Enable shared library" ON)
 
 if (NOT ANDROID AND NOT (TARGET SDL2 OR TARGET SDL2-static))
-    find_package(SDL2 REQUIRED)
+    #find_package(SDL2 REQUIRED)
     if(NOT TARGET SDL2::SDL2)
         # SDL < 2.0.12
         add_library(SDL2::SDL2 INTERFACE IMPORTED)
-        add_library(SDL2::SDL2 ALIAS SDL2)
         set_target_properties(SDL2::SDL2 PROPERTIES
             INTERFACE_INCLUDE_DIRECTORIES ${SDL2_INCLUDE_DIRS} ${SDL2_INCLUDE_DIR}
             INTERFACE_LINK_LIBRARIES ${SDL2_LIBRARIES} ${SDL2_LIBRARY}
